@@ -20,14 +20,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="220"/>
             </Grid.ColumnDefinitions>
-            
-            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="2">
-                <TextBox Text="Pesquisar Cliente" Height="30" Width="290" Margin="5"/>
+
+            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" Margin="2">
+                <TextBox Text="Pesquisar Cliente" Height="30" Width="285" Margin="5"/>
             </StackPanel>
             
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-                <Button Content="Adicionar" Width="100" Height="30" Margin="10"/>
-                <Button Content="Listas" Width="100" Height="30"/>
+                <Button x:Name="BtAddClient" Click="BtAddClient_Click" Content="Adicionar" Width="100" Height="30" Margin="10"/>
+                <Button x:Name="BtLists" Content="Listas" Width="100" Height="30"/>
             </StackPanel>
         </Grid>
 

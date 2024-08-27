@@ -20,9 +20,64 @@ namespace Dimithrius004.View.Pages
     /// </summary>
     public partial class ClientDetailPage : Page
     {
-        public ClientDetailPage()
+        private Frame _container;
+        private bool LockedState;
+
+        public ClientDetailPage(Frame container, bool state)
         {
             InitializeComponent();
+            _container = container;
+            LockedState = state;
+
+            ButtonsStateChange();
+        }
+
+        public void ButtonsStateChange()
+        {
+            if (LockedState)
+            {
+                BtEditSave.Content = "Editar";
+                BtDeleteCancel.Content = "Excluir";
+            } 
+            else
+            {               
+                BtEditSave.Content = "Salvar";
+                BtDeleteCancel.Content = "Cancelar";
+            }
+
+        }
+
+        private void BtBack_Click(object sender, RoutedEventArgs e)
+        {
+            _container.GoBack();
+        }
+
+        private void BtEditSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (LockedState)
+            {
+                LockedState = false;
+            } 
+            else
+            {
+                LockedState = true;
+            }
+
+            ButtonsStateChange();
+        }
+
+        private void BtDeleteCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (LockedState)
+            {
+                LockedState = false;
+            }
+            else
+            {
+                LockedState = true;
+            }
+
+            ButtonsStateChange();
         }
     }
 }

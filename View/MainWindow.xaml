@@ -26,10 +26,10 @@
 
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
                 <StackPanel>
-                    <Button Content="Clientes" Height="50"/>
-                    <Button Content="Ferramentas" Height="50"/>
-                    <Button Content="Relatórios" Height="50"/>
-                    <Button Content="Configurações" Height="50"/>
+                    <Button x:Name="BtClients" Content="Clientes" Click="BtClients_Click" Height="50"/>
+                    <Button x:Name="BtTools" Content="Ferramentas" Height="50"/>
+                    <Button x:Name="BtReport" Content="Relatórios" Height="50"/>
+                    <Button x:Name="BtConfig" Content="Configurações" Height="50"/>
                 </StackPanel>
             </ScrollViewer>
 
@@ -39,7 +39,7 @@
             
         </Grid>
 
-        <Frame Grid.Column="1" x:Name="Container"/>
+        <Frame Grid.Column="1" x:Name="Container" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

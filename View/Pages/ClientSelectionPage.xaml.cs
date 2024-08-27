@@ -20,9 +20,17 @@ namespace Dimithrius004.View.Pages
     /// </summary>
     public partial class ClientSelectionPage : Page
     {
-        public ClientSelectionPage()
+        private Frame _container;
+
+        public ClientSelectionPage(Frame container)
         {
             InitializeComponent();
+            _container = container;
+        }
+
+        private void BtAddClient_Click(object sender, RoutedEventArgs e)
+        {
+            _container.Navigate(new ClientDetailPage(_container, false));
         }
     }
 }

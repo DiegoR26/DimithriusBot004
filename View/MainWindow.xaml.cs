@@ -21,8 +21,11 @@ namespace Dimithrius004
         {
             InitializeComponent();
 
-            Container.Navigate(new ClientSelectionPage());
+        }
 
+        private void BtClients_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new ClientSelectionPage(Container));
         }
     }
 }

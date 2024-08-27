@@ -16,12 +16,23 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5">
-            <StackPanel Orientation="Vertical">
-                <Button Content="Editar" Width="100" Height="30"/>
-                <Button Content="Deletar" Width="100" Height="30"/>
+        <Grid Grid.Row="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="110"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+                <Button x:Name="BtBack" Click="BtBack_Click" Content="Voltar" Width="100" Height="30"/>
             </StackPanel>
-        </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">
+                <Button x:Name="BtEditSave" Click="BtEditSave_Click" Content="Editar" Width="100" Height="30"/>
+                <Button x:Name="BtDeleteCancel" Click="BtDeleteCancel_Click" Content="Deletar" Width="100" Height="30"/>
+            </StackPanel>
+            
+        </Grid>
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
