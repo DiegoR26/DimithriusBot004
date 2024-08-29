@@ -28,8 +28,18 @@
             </StackPanel>
 
             <StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">
-                <Button x:Name="BtEditSave" Click="BtEditSave_Click" Content="Editar" Width="100" Height="30"/>
-                <Button x:Name="BtDeleteCancel" Click="BtDeleteCancel_Click" Content="Deletar" Width="100" Height="30"/>
+                <Button x:Name="BtEdit" Content="Editar" Command="{Binding EditCommand}"
+                        Visibility="{Binding IsViewing, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Width="100" Height="30"/>
+                <Button x:Name="BtDelete" Content="Deletar" Command="{Binding DeleteCommand}" 
+                        Visibility="{Binding IsViewing, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Width="100" Height="30"/>
+                <Button x:Name="BtSave" Content="Salvar" Command="{Binding SaveCommand}" 
+                        Visibility="{Binding IsEditing, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Width="100" Height="30"/>
+                <Button x:Name="BtCancel" Content="Cancelar" Command="{Binding CancelCommand}" 
+                        Visibility="{Binding IsEditing, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Width="100" Height="30"/>
             </StackPanel>
             
         </Grid>

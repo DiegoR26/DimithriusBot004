@@ -20,30 +20,12 @@ namespace Dimithrius004.View.Pages
     /// </summary>
     public partial class ClientDetailPage : Page
     {
-        private Frame _container;
-        private bool LockedState;
+        private readonly Frame _container;
 
-        public ClientDetailPage(Frame container, bool state)
+        public ClientDetailPage(Frame container)
         {
             InitializeComponent();
             _container = container;
-            LockedState = state;
-
-            ButtonsStateChange();
-        }
-
-        public void ButtonsStateChange()
-        {
-            if (LockedState)
-            {
-                BtEditSave.Content = "Editar";
-                BtDeleteCancel.Content = "Excluir";
-            } 
-            else
-            {               
-                BtEditSave.Content = "Salvar";
-                BtDeleteCancel.Content = "Cancelar";
-            }
 
         }
 
@@ -52,32 +34,5 @@ namespace Dimithrius004.View.Pages
             _container.GoBack();
         }
 
-        private void BtEditSave_Click(object sender, RoutedEventArgs e)
-        {
-            if (LockedState)
-            {
-                LockedState = false;
-            } 
-            else
-            {
-                LockedState = true;
-            }
-
-            ButtonsStateChange();
-        }
-
-        private void BtDeleteCancel_Click(object sender, RoutedEventArgs e)
-        {
-            if (LockedState)
-            {
-                LockedState = false;
-            }
-            else
-            {
-                LockedState = true;
-            }
-
-            ButtonsStateChange();
-        }
     }
 }

@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
+using ViewModel;
+using Model;
 
 namespace Dimithrius004.View.Pages
 {
@@ -20,7 +11,7 @@ namespace Dimithrius004.View.Pages
     /// </summary>
     public partial class ClientSelectionPage : Page
     {
-        private Frame _container;
+        private readonly Frame _container;
 
         public ClientSelectionPage(Frame container)
         {
@@ -30,7 +21,10 @@ namespace Dimithrius004.View.Pages
 
         private void BtAddClient_Click(object sender, RoutedEventArgs e)
         {
-            _container.Navigate(new ClientDetailPage(_container, false));
+            var viewModel = new ClientDetailViewModel(new Client(), true);
+            var clientDetailView = new ClientDetailPage(_container) { DataContext = viewModel };
+
+            _container.Navigate(clientDetailView);
         }
     }
 }
