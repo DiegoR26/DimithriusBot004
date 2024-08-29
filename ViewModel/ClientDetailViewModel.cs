@@ -11,15 +11,14 @@ namespace ViewModel
 
         private bool _isEditing;
 
-        public ClientDetailViewModel()
+        public ClientDetailViewModel(bool isEditing)
         {
             EditCommand = new RelayCommand(EditClient);
             SaveCommand = new RelayCommand(SaveClient);
             DeleteCommand = new RelayCommand(DeleteClient);
             CancelCommand = new RelayCommand(CancelEdit);
 
-            Client = new Client();
-            IsEditing = false;
+            IsEditing = isEditing;
         }
 
         public ClientDetailViewModel(Client client, bool isEditing)

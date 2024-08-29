@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Dimithrius004.View.PageElements.ClientListDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dimithrius004.View.PageElements"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="580">
+    <Grid Margin="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="110"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="5">
+                <Label Content="Razão Social da Empresa" TextElement.FontWeight="Bold"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                <Label Content="Cod."/>
+                <Label Content="000000"/>
+                <Label Content="CNPJ"/>
+                <Label Content="00.000.000/0001-00"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Content="Tributação"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <Button Content="Detalhes" Width="100"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

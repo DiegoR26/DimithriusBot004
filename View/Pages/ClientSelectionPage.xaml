@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dimithrius004.View.Pages"
+      xmlns:pageElements="clr-namespace:Dimithrius004.View.PageElements"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="580"
       Title="ClientSelectionPage">
@@ -32,21 +33,18 @@
         </Grid>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <ListView>
-                <Grid Height="60">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid Grid.Column="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                    </Grid>
-                    
-                </Grid>
+            <ListView HorizontalContentAlignment="Stretch">
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
+                <pageElements:ClientListDisplay/>
             </ListView>
         </ScrollViewer>
         

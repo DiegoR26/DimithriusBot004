@@ -21,7 +21,7 @@ namespace Dimithrius004.View.Pages
 
         private void BtAddClient_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = new ClientDetailViewModel(new Client(), true);
+            var viewModel = new ClientDetailViewModel(true);
             var clientDetailView = new ClientDetailPage(_container) { DataContext = viewModel };
 
             _container.Navigate(clientDetailView);
