@@ -4,42 +4,143 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dimithrius004"
+        xmlns:fontAwesome="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="Dimithrius 4.0.0" Height="450" Width="800"
-        MinWidth="800" MinHeight="450">
+        Height="650" Width="1000"
+        MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+        Background="Transparent" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <!--Background Grid-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
+            <Border Grid.Column="0" Width="220" CornerRadius="25 0 0 25">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#343155" Offset="0"/>
+                        <GradientStop Color="#3B2E58" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
 
-            <StackPanel Grid.Row="0">
-                
-            </StackPanel>
+            <Border Grid.Column="1" CornerRadius="0 25 25 0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#3E3A65" Offset="0"/>
+                        <GradientStop Color="#473765" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
 
-            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
-                <StackPanel>
-                    <Button x:Name="BtClients" Content="Clientes" Click="BtClients_Click" Height="50"/>
-                    <Button x:Name="BtTools" Content="Ferramentas" Height="50"/>
-                    <Button x:Name="BtReport" Content="Relatórios" Height="50"/>
-                    <Button x:Name="BtConfig" Content="Configurações" Height="50"/>
+            <!--Controls-->
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <!--Logo-->
+                <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Dimithrius" FontSize="20" FontWeight="Bold" Foreground="White"/>
                 </StackPanel>
-            </ScrollViewer>
 
-            <StackPanel Grid.Row="2">
-                <Button Content="Sobre o Sistema" Height="50"/>
-            </StackPanel>
+                <!--Sidebar-->
+                <StackPanel Grid.Row="1">
+
+                    <Button x:Name="BtClients" Click="BtClients_Click"
+                            Style="{StaticResource activeSideMenuButton}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <fontAwesome:ImageAwesome Icon="UserOutline" Style="{StaticResource sideMenuButtonImage}"/>
+                                <TextBlock Text="Clientes" Style="{StaticResource sideMenuButtonText}"/>
+                            </StackPanel>
+
+                            <fontAwesome:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource sideMenuButtonImageExpanded}"/>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="BtTools"
+                            Style="{StaticResource sideMenuButton}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <fontAwesome:ImageAwesome Icon="Calculator" Style="{StaticResource sideMenuButtonImage}"/>
+                                <TextBlock Text="Ferramentas" Style="{StaticResource sideMenuButtonText}"/>
+                            </StackPanel>
+
+                            <fontAwesome:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource sideMenuButtonImageExpanded}"/>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="BtReport"
+                            Style="{StaticResource sideMenuButton}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <fontAwesome:ImageAwesome Icon="BarChartOutline" Style="{StaticResource sideMenuButtonImage}"/>
+                                <TextBlock Text="Relatórios" Style="{StaticResource sideMenuButtonText}"/>
+                            </StackPanel>
+
+                            <fontAwesome:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource sideMenuButtonImageExpanded}"/>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="BtConfig"
+                            Style="{StaticResource sideMenuButton}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <fontAwesome:ImageAwesome Icon="Cogs" Style="{StaticResource sideMenuButtonImage}"/>
+                                <TextBlock Text="Configurações" Style="{StaticResource sideMenuButtonText}"/>
+                            </StackPanel>
+
+                            <fontAwesome:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource sideMenuButtonImageExpanded}"/>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2">
+                    <Button x:Name="BtAbout"
+                            Style="{StaticResource sideMenuButton}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <fontAwesome:ImageAwesome Icon="InfoCircle" Style="{StaticResource sideMenuButtonImage}"/>
+                                <TextBlock Text="Sobre o Sistema" Style="{StaticResource sideMenuButtonText}"/>
+                            </StackPanel>
+
+                            <fontAwesome:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource sideMenuButtonImageExpanded}"/>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="BtExit" Click="BtExit_Click"
+                            Style="{StaticResource sideMenuButton}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <fontAwesome:ImageAwesome Icon="PowerOff" Style="{StaticResource sideMenuButtonImage}"/>
+                                <TextBlock Text="Sair" Style="{StaticResource sideMenuButtonText}"/>
+                            </StackPanel>
+
+                            <fontAwesome:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource sideMenuButtonImageExpanded}"/>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <!--Content Frame-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                
+                <Frame Grid.Row="1" x:Name="Container" NavigationUIVisibility="Hidden"/>
+                
+            </Grid>
             
         </Grid>
-
-        <Frame Grid.Column="1" x:Name="Container" NavigationUIVisibility="Hidden"/>
-
     </Grid>
 </Window>

@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dimithrius004.View.Pages"
       xmlns:pageElements="clr-namespace:Dimithrius004.View.PageElements"
+      xmlns:fontAwesome="http://schemas.fontawesome.io/icons/"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="580"
+      d:DesignHeight="450" d:DesignWidth="650"
       Title="ClientSelectionPage">
 
     <Grid>
@@ -17,23 +18,49 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="350"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="260"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" Margin="2">
-                <TextBox Text="Pesquisar Cliente" Height="30" Width="285" Margin="5"/>
-            </StackPanel>
+            <Grid Grid.Column="0" HorizontalAlignment="Left" Margin="5 0 0 0">
+                <Border CornerRadius="15" Background="#21203b" Height="30" Width="335"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBox Height="30" Width="285" VerticalContentAlignment="Center"
+                             Margin="15 0 0 0" BorderThickness="0" Background="Transparent" Foreground="#e9e9e9"/>
+                    <fontAwesome:ImageAwesome Icon="Search" Foreground="#f0f0f0" Margin="5 0 0 0" Height="15" Width="15"/>
+                </StackPanel>
+            </Grid>
+            
             
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-                <Button x:Name="BtAddClient" Click="BtAddClient_Click" Content="Adicionar" Width="100" Height="30" Margin="10"/>
-                <Button x:Name="BtLists" Content="Listas" Width="100" Height="30"/>
+                
+                <Button x:Name="BtAddClient" Click="BtAddClient_Click" Width="120" Height="30" Margin="0 0 10 0"
+                        Style="{StaticResource baseButton}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <fontAwesome:ImageAwesome Icon="Plus" Foreground="#f0f0f0" Height="10" Width="10"/>
+                        <TextBlock Text="Adicionar" Foreground="#f0f0f0" Margin="10 0 0 0"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtLists" Width="120" Height="30"
+                        Style="{StaticResource baseButton}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <fontAwesome:ImageAwesome Icon="Bars" Foreground="#f0f0f0" Height="10" Width="10"/>
+                        <TextBlock Text="Listas" Foreground="#f0f0f0" Margin="10 0 0 0"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
         </Grid>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <ListView HorizontalContentAlignment="Stretch">
+                <ListView.Template>
+                    <ControlTemplate>
+                        <ItemsPresenter/>
+                    </ControlTemplate>
+                </ListView.Template>
+                
                 <pageElements:ClientListDisplay/>
                 <pageElements:ClientListDisplay/>
                 <pageElements:ClientListDisplay/>

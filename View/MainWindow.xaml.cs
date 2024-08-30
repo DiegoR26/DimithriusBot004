@@ -20,12 +20,23 @@ namespace Dimithrius004
         public MainWindow()
         {
             InitializeComponent();
+        }
 
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
 
         private void BtClients_Click(object sender, RoutedEventArgs e)
         {
             Container.Navigate(new ClientSelectionPage(Container));
         }
+
+        private void BtExit_Click(object sender, RoutedEventArgs e)
+        {
+            //Fazer janela de dialogo para fechar
+            Close();
+        }
+
     }
 }
