@@ -27,7 +27,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            
+
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Template">
@@ -54,10 +54,6 @@
                     <Setter Property="Foreground" Value="#ffffff"/>
                 </Trigger>
             </Style.Triggers>
-        </Style>
-
-        <Style x:Key="baseTextBox" TargetType="TextBox">
-            
         </Style>
 
         <Style x:Key="sideMenuButton" TargetType="Button">
@@ -140,7 +136,7 @@
         <Style x:Key="activeSideMenuButton" TargetType="Button" BasedOn="{StaticResource sideMenuButton}">
             <Setter Property="Background" Value="#21203b"/>
             <Setter Property="Foreground" Value="#e9e9e9"/>
-            
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -159,6 +155,88 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
+        <Style x:Key="baseComboBox" TargetType="ComboBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <!-- Border for the ComboBox (closed) -->
+                            <Border x:Name="ComboBoxBorder" 
+                                Background="#21203b"
+                                BorderBrush="#21203b"
+                                BorderThickness="0"
+                                CornerRadius="15"
+                                Height="30"/>
+                            <!-- ContentPresenter to show the selected item -->
+                            <ContentPresenter x:Name="ContentSite"
+                                          IsHitTestVisible="False"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          Content="{TemplateBinding SelectionBoxItem}" 
+                                          VerticalAlignment="Center"
+                                          Margin="15,0,0,0"
+                                          HorizontalAlignment="Left"/>
+                            <!-- Drop-down button -->
+                            <ToggleButton x:Name="DropDownToggle"
+                                      Grid.Column="1"
+                                      Focusable="False"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      HorizontalAlignment="Right"
+                                      Margin="0 0 15 0">
+                                <Path Data="M 0 0 L 4 4 L 8 0 Z" 
+                                  Fill="#e9e9e9" 
+                                  Width="10" 
+                                  Height="10"/>
+                            </ToggleButton>
+                            <!-- Popup for the dropdown -->
+                            <Popup x:Name="PART_Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True" 
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                                <Grid MaxHeight="200">
+                                    <Border x:Name="PopupBorder" 
+                                        Background="#21203b"
+                                        BorderBrush="#21203b"
+                                        BorderThickness="0"
+                                        CornerRadius="15" 
+                                        Padding="5">
+                                        <ScrollViewer CanContentScroll="True">
+                                            <ItemsPresenter/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="#e9e9e9"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="15 0 0 0"/>
+        </Style>
+
+        <Style x:Key="baseTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="15 0 0 0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#e9e9e9"/>
+        </Style>
+
+        <ControlTemplate x:Key="baseTextBoxBorder" TargetType="ContentControl">
+            <Grid HorizontalAlignment="Stretch" Margin="5 0 0 0">
+                <Border CornerRadius="15" Background="#21203b" Height="30"/>
+                <ContentPresenter VerticalAlignment="Center"/>
+            </Grid>
+        </ControlTemplate>
+
     </Application.Resources>
 </Application>

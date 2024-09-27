@@ -22,6 +22,7 @@ namespace Dimithrius004.View.Pages
     {
         private readonly Frame _container;
 
+
         public ClientDetailPage(Frame container)
         {
             InitializeComponent();

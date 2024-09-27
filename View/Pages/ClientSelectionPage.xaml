@@ -39,7 +39,7 @@
                         Style="{StaticResource baseButton}">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <fontAwesome:ImageAwesome Icon="Plus" Foreground="#f0f0f0" Height="10" Width="10"/>
-                        <TextBlock Text="Adicionar" Foreground="#f0f0f0" Margin="10 0 0 0"/>
+                        <TextBlock Text="Adicionar" Foreground="#f0f0f0" Margin="10 0 0 0" Width="50" TextAlignment="Center"/>
                     </StackPanel>
                 </Button>
 
@@ -47,7 +47,7 @@
                         Style="{StaticResource baseButton}">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <fontAwesome:ImageAwesome Icon="Bars" Foreground="#f0f0f0" Height="10" Width="10"/>
-                        <TextBlock Text="Listas" Foreground="#f0f0f0" Margin="10 0 0 0"/>
+                        <TextBlock Text="Listas" Foreground="#f0f0f0" Margin="10 0 0 0" Width="50" TextAlignment="Center"/>
                     </StackPanel>
                 </Button>
             </StackPanel>

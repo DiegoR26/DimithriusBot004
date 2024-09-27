@@ -11,6 +11,8 @@ namespace ViewModel
 
         private bool _isEditing;
 
+        public List<string> ComboBoxItems { get; set; } = new List<string> { "Item 1", "Item 2", "Item 3" };
+
         public ClientDetailViewModel(bool isEditing)
         {
             EditCommand = new RelayCommand(EditClient);
