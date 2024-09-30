@@ -1,5 +1,5 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using Data;
+using Microsoft.EntityFrameworkCore;
 using System.Windows;
 
 namespace Dimithrius004
@@ -8,7 +8,18 @@ namespace Dimithrius004
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
-    {
+    { 
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            using (var db = new AppDBContext())
+            {
+                db.Database.Migrate();
+            }
+
+        }
+
     }
 
 }

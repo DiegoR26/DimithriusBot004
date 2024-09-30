@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace Dimithrius004
 {
@@ -29,7 +30,10 @@ namespace Dimithrius004
 
         private void BtClients_Click(object sender, RoutedEventArgs e)
         {
-            Container.Navigate(new ClientSelectionPage(Container));
+            var viewModel = new ClientSelectionViewModel(Container);
+            var clientSelectionView = new ClientSelectionPage(Container) { DataContext = viewModel };
+
+            Container.Navigate(clientSelectionView);
         }
 
         private void BtExit_Click(object sender, RoutedEventArgs e)

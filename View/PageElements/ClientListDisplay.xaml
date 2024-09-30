@@ -4,46 +4,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Dimithrius004.View.PageElements"
+             xmlns:fontAwesome="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="580">
     <Grid Margin="1">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="110"/>
-        </Grid.ColumnDefinitions>
+        <Border Background="#21203b" CornerRadius="25"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="155"/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="5">
-                <Label Content="Razão Social da Empresa" TextElement.FontWeight="Bold"/>
-            </StackPanel>
+                <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="20 5 0 0">
+                    <Label x:Name="clientName" Foreground="#f0f0f0" TextElement.FontWeight="Bold" TextElement.FontSize="15"/>
+                </StackPanel>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
-                <Label Content="Cod."/>
-                <Label Content="000000"/>
-                <Label Content="CNPJ"/>
-                <Label Content="00.000.000/0001-00"/>
-            </StackPanel>
-        </Grid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="20 0 0 5">
+                    <Label Content="Cod." Foreground="#f0f0f0"/>
+                    <Label x:Name="clientSistemCode" Content="000000" Foreground="#f0f0f0"/>
+                    <Label Content="CNPJ" Foreground="#f0f0f0"/>
+                    <Label x:Name="clientCNPJ" Content="00.000.000/0001-00" Foreground="#f0f0f0"/>
+                </StackPanel>
+            </Grid>
 
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Label Content="Tributação"/>
-            </StackPanel>
+                <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 25 0">
+                    <Label x:Name="clientTaxation" Foreground="#f0f0f0"/>
+                </StackPanel>
 
-            <StackPanel Grid.Row="1" VerticalAlignment="Center">
-                <Button Content="Detalhes" Width="100"/>
-            </StackPanel>
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="0 0 25 0">
+                    <Button x:Name="BtDetails" Click="BtDetails_Click" Width="120" Height="30" Margin="0 0 10 0"
+                            Style="{StaticResource baseButton}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fontAwesome:ImageAwesome Icon="PlusCircle"  Foreground="#f0f0f0" Height="10" Width="10"/>
+                            <TextBlock Text="Detahes" Foreground="#f0f0f0" Margin="10 0 0 0" Width="50" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
 
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

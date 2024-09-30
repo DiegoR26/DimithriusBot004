@@ -18,10 +18,9 @@ namespace Model
         public string? MunicipalPassword { get; private set; }
         public bool Active { get; private set; }
         public ETaxation Taxation { get; private set; }
-        public bool MunicipalTaxes { get; private set; }
-        public bool StateTaxes { get; private set; }
 
-        public Client(string? sistCod, string name, string cNPJ, int branch, ECity city, ECountry country, string? municipalRegister, string? stateRegister, string? municipalLogin, string? municipalPassword, bool active, ETaxation taxation, bool municipalTaxes, bool stateTaxes)
+
+        public Client(string? sistCod, string name, string cNPJ, int branch, ECity city, ECountry country, string? municipalRegister, string? stateRegister, string? municipalLogin, string? municipalPassword, bool active, ETaxation taxation)
         {
             SistCod = sistCod;
             Name = name;
@@ -35,8 +34,7 @@ namespace Model
             MunicipalPassword = municipalPassword;
             Active = active;
             Taxation = taxation;
-            MunicipalTaxes = municipalTaxes;
-            StateTaxes = stateTaxes;
+
         }
 
         public Client(int id, string? sistCod, string name, string cNPJ, int branch, ECity city, ECountry country, string? municipalRegister, string? stateRegister, string? municipalLogin, string? municipalPassword, bool active, ETaxation taxation, bool municipalTaxes, bool stateTaxes)
@@ -54,8 +52,7 @@ namespace Model
             MunicipalPassword = municipalPassword;
             Active = active;
             Taxation = taxation;
-            MunicipalTaxes = municipalTaxes;
-            StateTaxes = stateTaxes;
+
         }
 
         public string GetSituationStatus()

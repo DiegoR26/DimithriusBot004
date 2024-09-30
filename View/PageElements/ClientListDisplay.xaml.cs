@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,26 @@ namespace Dimithrius004.View.PageElements
     /// </summary>
     public partial class ClientListDisplay : UserControl
     {
-        public ClientListDisplay()
+        private readonly Frame _container;
+        public Client _client { get; set; }
+
+        public ClientListDisplay(Client client, Frame container)
         {
+            _container = container;
+            _client = client;
             InitializeComponent();
+
+            clientName.Content = _client.Name;
+            clientSistemCode.Content = _client.SistCod;
+            clientCNPJ.Content = _client.CNPJ;
+            clientTaxation.Content = _client.Taxation;
         }
+
+        private void BtDetails_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

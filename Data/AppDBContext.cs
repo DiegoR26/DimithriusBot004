@@ -12,5 +12,7 @@ namespace Data
         {
             optionsBuilder.UseSqlite("Data Source=Clients.db3");
         }
+
+
     }
 }

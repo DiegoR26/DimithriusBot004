@@ -47,9 +47,6 @@ namespace Dimithrius004.Migrations
                     b.Property<string>("MunicipalRegister")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("MunicipalTaxes")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -59,9 +56,6 @@ namespace Dimithrius004.Migrations
 
                     b.Property<string>("StateRegister")
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("StateTaxes")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Taxation")
                         .HasColumnType("INTEGER");

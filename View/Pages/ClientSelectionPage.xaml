@@ -54,24 +54,14 @@
         </Grid>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <ListView HorizontalContentAlignment="Stretch">
+            <ListView x:Name="clientListView" HorizontalContentAlignment="Stretch"
+                      ItemsSource="{Binding ClientListDisplays}">
                 <ListView.Template>
                     <ControlTemplate>
                         <ItemsPresenter/>
                     </ControlTemplate>
                 </ListView.Template>
                 
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
-                <pageElements:ClientListDisplay/>
             </ListView>
         </ScrollViewer>
         

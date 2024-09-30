@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dimithrius004.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20240822202536_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240930121530_SmallerVersion")]
+    partial class SmallerVersion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,9 +50,6 @@ namespace Dimithrius004.Migrations
                     b.Property<string>("MunicipalRegister")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("MunicipalTaxes")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -62,9 +59,6 @@ namespace Dimithrius004.Migrations
 
                     b.Property<string>("StateRegister")
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("StateTaxes")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Taxation")
                         .HasColumnType("INTEGER");
