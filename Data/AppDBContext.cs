@@ -10,7 +10,7 @@ namespace Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Clients.db3");
+            optionsBuilder.UseSqlite("Data Source=C:/DataBases/Dimithrius004.db3");
         }
 
 
